@@ -1,0 +1,18 @@
+# Define the version of the Docker Compose file
+version: '3'
+
+# Define the services for your Docker Compose configuration
+services:
+  # Service for your Vue.js application
+  app:
+    # Build configuration for the service
+    build:
+      context: .         # Use the current directory as the build context
+      dockerfile: Dockerfile  # Specify the Dockerfile to use for building the Docker image
+
+    # Name for the container when it's created
+    container_name: my-vue-app
+
+    # Port mapping for the container and the host
+    ports:
+      - "8081:8081"    # Map container port 8081 to host port 8081
